@@ -25,12 +25,12 @@ test.only('test sauce', async ({ page }) => {
     await page.locator('[data-test="login-button"]').click();
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
-    // Select lohi  <-- This function works as well
-    await page.locator('[data-test="product_sort_container"]').selectOption('lohi');
+    // // Select lohi  <-- This function works as well
+    // await page.locator('[data-test="product_sort_container"]').selectOption('lohi');
 
-    // //This one doesn't work
-    // await page.locator('[data-test="product_sort_container"]').click();
-    // await page.locator('option', {hasText: 'Price (low to high)'}).click();
+    //This one doesn't work
+    await page.locator('[data-test="product_sort_container"]').click();
+    await page.locator('option', {hasText: 'Price (low to high)'}).click();
 
     // Select hilo
     await page.locator('[data-test="product_sort_container"]').selectOption('hilo');
