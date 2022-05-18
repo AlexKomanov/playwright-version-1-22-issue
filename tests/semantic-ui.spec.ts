@@ -6,7 +6,7 @@ test.only('test', async ({ page }) => {
   await page.goto('https://semantic-ui.com/modules/dropdown.html#/definition');
 
   // Click text=Selection A dropdown can be used to select between choices in a form Selection d >> i >> nth=1
-  await page.locator('text=Selection A dropdown can be used to select between choices in a form Selection d >> i').nth(1).click();
+  await page.locator('[class="ui selection dropdown"]', {hasText: 'Gender'}).nth(0).click();
 
   // Click .menu.transition.visible > div >> nth=0
 
@@ -28,7 +28,7 @@ test.only('test', async ({ page }) => {
   // Click .ui.fluid.search > .dropdown >> nth=0
   await page.locator('.ui.fluid.search > .dropdown').first().click();
 
-  // Click .menu.transition.visible > div:nth-child(6)
-  await page.locator('.menu.transition.visible > div:nth-child(6)').click();
+  // Click [class="ui fluid search selection dropdown active visible"] .item', {hasText: 'Algeria'}
+  await page.locator('[class="ui fluid search selection dropdown active visible"] .item', {hasText: 'Algeria'}).click();
 
 });
