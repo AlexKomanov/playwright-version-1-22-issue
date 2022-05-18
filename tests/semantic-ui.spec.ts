@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.only('test', async ({ page }) => {
+test('test', async ({ page }) => {
 
   // Go to https://semantic-ui.com/modules/dropdown.html#/definition
   await page.goto('https://semantic-ui.com/modules/dropdown.html#/definition');
